@@ -31,108 +31,107 @@
                     <span class="title">Templete</span>
                 </a>
             </div>
-            <p>Dashboard</p>
             <ul class="list-unstyled components">
-                <li class="background">
-                    <a href="#homeSubmenu" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle"><span>Dashboard<span></a>
+                <li>
+                    <a href="#homeSubmenu" data-toggle="collapse" aria-expanded="false" class="sidebar-box"><span>Dashboard<span></a>
                 </li>
                 <li class="background">
                     <a href="#contribuinteSubmenu" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle">
-                        <span>Contribuinte</span>
+                        <span>Item</span>
                     </a>
                     <ul class="collapse list-unstyled" id="contribuinteSubmenu">
                         <li>
-                            <a href="#"> <i class="fas fa-circle"></i> Dados Cadastrais</a>
+                            <a href="#"> <i class="fas fa-circle"></i> Item</a>
                         </li>
                     </ul>
                 </li>
                 <li class="background">
-                    <a href="#escrituracaoSubmenu" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle"><span>Escrituração Fiscal Digital</span></a>
+                    <a href="#escrituracaoSubmenu" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle"><span>Item</span></a>
                     <ul class="collapse list-unstyled" id="escrituracaoSubmenu">
                         <li class="down">
-                            <a href="#"> <i class="fas fa-circle"></i> Apuração EFD</a>
+                            <a href="#"> <i class="fas fa-circle"></i> Item</a>
                         </li>
                         <li class="down">
-                            <a href="#"> <i class="fas fa-circle"></i> Apuração EFD</a>
+                            <a href="#"> <i class="fas fa-circle"></i> Item</a>
                         </li>
                         <li>
-                            <a href="#"> <i class="fas fa-circle"></i> Apuração EFD</a>
+                            <a href="#"> <i class="fas fa-circle"></i> Item</a>
                         </li>
                     </ul>
                 </li>
                 <li class="background">
-                    <a href="#debitosSubmenu" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle"><span>Débitos Fiscais</span></a>
+                    <a href="#debitosSubmenu" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle"><span>Item</span></a>
                     <ul class="collapse list-unstyled" id="debitosSubmenu">
                         <li class="down">
-                            <a href="#"> <i class="fas fa-circle"></i> Apuração EFD</a>
+                            <a href="#"> <i class="fas fa-circle"></i> Item</a>
                         </li>
                         <li>
-                            <a href="#"> <i class="fas fa-circle"></i> Apuração EFD</a>
+                            <a href="#"> <i class="fas fa-circle"></i> Item</a>
                         </li>
                     </ul>
                 </li>
                 <li class="background">
-                    <a href="#indicadoresSubmenu" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle"><span>Indicadores</span></a>
+                    <a href="#indicadoresSubmenu" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle"><span>Item</span></a>
                     <ul class="collapse list-unstyled" id="indicadoresSubmenu">
                         <li class="down">
-                            <a href="#"> <i class="fas fa-circle"></i> Apuração EFD</a>
+                            <a href="#"> <i class="fas fa-circle"></i> Item</a>
                         </li>
                         <li class="down">
-                            <a href="#"> <i class="fas fa-circle"></i> Apuração EFD</a>
+                            <a href="#"> <i class="fas fa-circle"></i> Item</a>
                         </li>
                         <li class="down">
-                            <a href="#"> <i class="fas fa-circle"></i> Apuração EFD</a>
+                            <a href="#"> <i class="fas fa-circle"></i> Item</a>
                         </li>
                         <li class="down">
-                            <a href="#"> <i class="fas fa-circle"></i> Apuração EFD</a>
+                            <a href="#"> <i class="fas fa-circle"></i> Item</a>
                         </li>
                         <li class="down">
-                            <a href="#"> <i class="fas fa-circle"></i> Apuração EFD</a>
+                            <a href="#"> <i class="fas fa-circle"></i> Item</a>
                         </li>
                         <li class="down">
-                            <a href="#"> <i class="fas fa-circle"></i> Apuração EFD</a>
+                            <a href="#"> <i class="fas fa-circle"></i> Item</a>
                         </li>
                         <li class="down">
-                            <a href="#"> <i class="fas fa-circle"></i> Apuração EFD</a>
+                            <a href="#"> <i class="fas fa-circle"></i> Item</a>
                         </li>
                         <li>
-                            <a href="#"> <i class="fas fa-circle"></i> Apuração EFD</a>
+                            <a href="#"> <i class="fas fa-circle"></i> Item</a>
                         </li>
                     </ul>
                 </li>
                 <li class="background">
                     <a href="#documentosSubmenu" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle">
-                        <span>Documentos Fiscais</span>
+                        <span>Item</span>
                     </a>
                     <ul class="collapse list-unstyled" id="documentosSubmenu">
                         <li class="down">
-                            <a href="#"> <i class="fas fa-circle"></i> Apuração EFD</a>
+                            <a href="#"> <i class="fas fa-circle"></i> Item</a>
                         </li>
                         <li class="down">
-                            <a href="#"> <i class="fas fa-circle"></i> Apuração EFD</a>
+                            <a href="#"> <i class="fas fa-circle"></i> Item</a>
                         </li>
                         <li class="down">
-                            <a href="#"> <i class="fas fa-circle"></i> Apuração EFD</a>
+                            <a href="#"> <i class="fas fa-circle"></i> Item</a>
                         </li>
                         <li class="down">
-                            <a href="#"> <i class="fas fa-circle"></i> Apuração EFD</a>
+                            <a href="#"> <i class="fas fa-circle"></i> Item</a>
                         </li>
                         <li>
-                            <a href="#"> <i class="fas fa-circle"></i> Apuração EFD</a>
+                            <a href="#"> <i class="fas fa-circle"></i> Item</a>
                         </li>
                     </ul>
                 </li>
                 <li class="background">
-                    <a href="#facilitadoresSubmenu" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle"><span>Facilitadores</span></a>
+                    <a href="#facilitadoresSubmenu" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle"><span>Item</span></a>
                     <ul class="collapse list-unstyled" id="facilitadoresSubmenu">
                         <li class="down">
-                            <a href="#"> <i class="fas fa-circle"></i> Apuração EFD</a>
+                            <a href="#"> <i class="fas fa-circle"></i> Item</a>
                         </li>
                         <li class="down">
-                            <a href="#"> <i class="fas fa-circle"></i> Apuração EFD</a>
+                            <a href="#"> <i class="fas fa-circle"></i> Item</a>
                         </li>
                         <li>
-                            <a href="#"> <i class="fas fa-circle"></i> Apuração EFD</a>
+                            <a href="#"> <i class="fas fa-circle"></i> Item</a>
                         </li>
                     </ul>
                 </li>
@@ -145,6 +144,15 @@
                 <button type="button" id="sidebarCollapse" class="btn">
                     <i class="fas fa-bars"></i>
                 </button>
+                <div class="collapse navbar-collapse">
+                    <div class="nav navbar-nav ml-auto">
+                        <button class="btn" onclick="event.preventDefault();
+                                                     document.getElementById('logout-form').submit();"><i class="fas fa-sign-out-alt"></i></button>
+                        <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
+                            @csrf
+                        </form>
+                    </div>
+                </div>
             </nav>
         </div>
 
