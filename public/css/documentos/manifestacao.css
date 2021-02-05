@@ -1,0 +1,153 @@
+.header .title {
+    font-size: 18px;
+    font-weight: 600;
+}
+
+.abas {
+    display: flex;
+    justify-content: space-around;
+    border: none;
+}
+
+.abas1-2,
+.abas1-3 {
+    display: flex;
+    justify-content: center;
+    transition: all 0.01s;
+}
+
+.abas .btn {
+    background-color: rgb(213, 212, 212);
+    border-radius: 10px;
+    font-size: 14px;
+    border: none;
+    transition: all 0.01s;
+
+}
+
+.abas1-2 .btn,
+.abas1-3 .btn {
+    margin-left: 10px;
+    margin-right: 10px;
+    margin-top: 20px;
+}
+
+.abas1-2 .btn,
+.abas1-3 .btn {
+    background-color: rgb(213, 212, 212);
+    border-radius: 10px;
+    font-size: 14px;
+    border: none;
+    transition: all 0.01s;
+    margin-bottom: 10px;
+
+}
+
+#btn1.active:before,
+#btn2.active:before,
+#btn3.active:before {
+    top: 70px;
+    /* margin-left: %; */
+    border: 20px solid transparent;
+    border-top-color: #6cb6e0;
+    content: "";
+    position: absolute;
+}
+
+#btn1.active,
+#btn2.active,
+#btn3.active {
+    background-color: #6cb6e0;
+    color: white;
+
+}
+
+.middle {
+    margin-top: 40px;
+    margin-left: 20px;
+    margin-right: 30px;
+    font-size: 14px;
+    background-color: #6cb6e0;
+    padding: 10px;
+    padding-bottom: 1px;
+    position: relative;
+    border-radius: 15px;
+}
+
+.middle .aviso {
+    font-size: 12px;
+    color: black;
+}
+
+.middle .row {
+    width: 70%;
+    display: flex;
+    margin-left: auto;
+    margin-right: auto;
+    justify-content: center;
+    margin-bottom: -25px;
+}
+
+.middle .row .group {
+    justify-content: center;
+}
+
+.middle .row label {
+    border-radius: 15px 0 0 15px;
+    font-weight: 500;
+}
+
+.group input,
+.group select {
+    margin-right: 10px;
+    border-radius: 0 15px 15px 0 !important;
+}
+
+.row .btn-search {
+    margin-left: 10px;
+    border-radius: 50%;
+    width: 30px;
+    height: 30px;
+    background-color: white;
+    color: #6cb6e0;
+    border: none;
+}
+
+input,
+select,
+label {
+    height: 30px !important;
+}
+
+.table {
+    overflow: hidden;
+    -webkit-border-radius: 15px;
+    -moz-border-radius: 15px;
+    border-radius: 15px;
+    table-layout: auto;
+}
+
+.table-header {
+    text-align: center;
+    background-color: white;
+    border: 0 !important;
+}
+
+.table-header .th {
+    vertical-align: middle;
+    font-weight: 600;
+    font-size: 14px;
+}
+
+.tbody {
+    text-align: center;
+}
+
+.table-bordered th {
+    border: none !important;
+}
+
+.table-bordered td {
+    color: white;
+    border: none !important;
+}
