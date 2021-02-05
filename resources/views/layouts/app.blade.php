@@ -1,179 +1,96 @@
-<!DOCTYPE html>
-<html lang="pt-br">
+<!doctype html>
+<html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
 
 <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- CSRF Token -->
+    <meta name="csrf-token" content="{{ csrf_token() }}">
+
+    <title>{{ config('app.name', 'Laravel') }}</title>
+
+    <!-- Scripts -->
+    <script src="{{ asset('js/app.js') }}" defer></script>
+
+    <!-- Fonts -->
+    <link rel="dns-prefetch" href="//fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css?family=Nunito" rel="stylesheet">
+
+    <!-- Styles -->
+    <link href="{{ asset('css/app.css') }}" rel="stylesheet">
+
     <!-- Bootstrap CSS CDN -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/css/bootstrap.min.css" integrity="sha384-9gVQ4dYFwwWSjIDZnLEWnxCjeSWFphJiwGPXr1jddIhOegiu1FwO5qRGvFXOdJZ4" crossorigin="anonymous">
 
-    <!-- Our Custom CSS -->
-    <link rel="stylesheet" href="{{asset('css/app.css')}}">
-
-    <!-- Font Family Google -->
-    <link rel="preconnect" href="https://fonts.gstatic.com">
-    <link href="https://fonts.googleapis.com/css2?family=Nunito&display=swap" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css2?family=Hind&display=swap" rel="stylesheet">
-
-    <!-- Font Awesome JS -->
-    <script defer src="https://use.fontawesome.com/releases/v5.0.13/js/solid.js" integrity="sha384-tzzSw1/Vo+0N5UhStP3bvwWPq+uvzCMfrN1fEFe+xBmv1C/AtVX5K0uZtmcHitFZ" crossorigin="anonymous"></script>
-    <script defer src="https://use.fontawesome.com/releases/v5.0.13/js/fontawesome.js" integrity="sha384-6OIrr52G08NpOFSZdxxz1xdNSndlD4vdcf/q2myIUVO0VsqaGHJsB0RaBE01VTOY" crossorigin="anonymous"></script>
-
-    <!-- jQuery CDN - Slim version (=without AJAX) -->
-    <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
-
-    <!-- Scrollbar Publin -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/malihu-custom-scrollbar-plugin/3.1.5/jquery.mCustomScrollbar.min.css">
-
-
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
 </head>
 
 <body>
-    <div class="wrapper">
-        <!-- Sidebar -->
-        <nav id="sidebar">
-            <div class="sidebar-header">
-                <a href="{{route('resumo')}}">
-                    <span class="title">Tax Prático</span>
+    <div id="app">
+        <nav class="navbar navbar-expand-md navbar-light bg-white shadow-sm">
+            <div class="container">
+                <a class="navbar-brand" href="{{ url('/') }}">
+                    {{ config('app.name', 'Laravel') }}
                 </a>
+                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="{{ __('Toggle navigation') }}">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+
+                <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                    <!-- Left Side Of Navbar -->
+                    <ul class="navbar-nav mr-auto">
+
+                    </ul>
+
+                    <!-- Right Side Of Navbar -->
+                    <ul class="navbar-nav ml-auto">
+                        <!-- Authentication Links -->
+                        @guest
+                        @if (Route::has('login'))
+                        <li class="nav-item">
+                            <a class="nav-link" href="{{ route('login') }}">{{ __('Login') }}</a>
+                        </li>
+                        @endif
+
+                        @if (Route::has('register'))
+                        <li class="nav-item">
+                            <a class="nav-link" href="{{ route('register') }}">{{ __('Register') }}</a>
+                        </li>
+                        @endif
+                        @else
+                        <li class="nav-item dropdown">
+                            <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
+                                {{ Auth::user()->name }}
+                            </a>
+
+                            <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
+                                <a class="dropdown-item" href="{{ route('logout') }}" onclick="event.preventDefault();
+                                                     document.getElementById('logout-form').submit();">
+                                    {{ __('Logout') }}
+                                </a>
+
+                                <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
+                                    @csrf
+                                </form>
+                            </div>
+                        </li>
+                        @endguest
+                    </ul>
+                </div>
             </div>
-            <ul class="list-unstyled components">
-                <li class="background">
-                    <a href="#homeSubmenu" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle"><span>Home<span></a>
-                    <ul class="collapse list-unstyled" id="homeSubmenu">
-                        <li>
-                            <a href="{{route('resumo')}}"> <i class="fas fa-circle"></i> Resumo Pêndencias Fiscais</a>
-                        </li>
-                    </ul>
-                </li>
-                <li class="background">
-                    <a href="#contribuinteSubmenu" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle">
-                        <span>Contribuinte</span>
-                    </a>
-                    <ul class="collapse list-unstyled" id="contribuinteSubmenu">
-                        <li>
-                            <a href="{{route('dados')}}"> <i class="fas fa-circle"></i> Dados Cadastrais</a>
-                        </li>
-                    </ul>
-                </li>
-                <li class="background">
-                    <a href="#escrituracaoSubmenu" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle"><span>Escrituração Fiscal Digital</span></a>
-                    <ul class="collapse list-unstyled" id="escrituracaoSubmenu">
-                        <li class="down">
-                            <a href="{{route('apuracao')}}"> <i class="fas fa-circle"></i> Apuração EFD</a>
-                        </li>
-                        <li class="down">
-                            <a href="{{route('debitos')}}"> <i class="fas fa-circle"></i> Débitos declarados</a>
-                        </li>
-                        <li>
-                            <a href="{{route('registros')}}"> <i class="fas fa-circle"></i> Registros de Entrada e Saída</a>
-                        </li>
-                    </ul>
-                </li>
-                <li class="background">
-                    <a href="#debitosSubmenu" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle"><span>Débitos Fiscais</span></a>
-                    <ul class="collapse list-unstyled" id="debitosSubmenu">
-                        <li class="down">
-                            <a href="{{route('detalhes')}}"> <i class="fas fa-circle"></i> Detalhes Débitos Fiscais</a>
-                        </li>
-                        <li>
-                            <a href="{{route('dae')}}"> <i class="fas fa-circle"></i> DAEs Emitidos</a>
-                        </li>
-                    </ul>
-                </li>
-                <li class="background">
-                    <a href="#indicadoresSubmenu" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle"><span>Indicadores</span></a>
-                    <ul class="collapse list-unstyled" id="indicadoresSubmenu">
-                        <li class="down">
-                            <a href="{{route('eventos')}}"> <i class="fas fa-circle"></i> Eventos da NF-e</a>
-                        </li>
-                        <li class="down">
-                            <a href="{{route('mdfe')}}"> <i class="fas fa-circle"></i> MDF-e</a>
-                        </li>
-                        <li class="down">
-                            <a href="{{route('cte')}}"> <i class="fas fa-circle"></i> CT-e</a>
-                        </li>
-                        <li class="down">
-                            <a href="{{route('nfe')}}"> <i class="fas fa-circle"></i> NF-e</a>
-                        </li>
-                        <li class="down">
-                            <a href="{{route('nfce')}}"> <i class="fas fa-circle"></i> NFC-e/ CF-e</a>
-                        </li>
-                        <li class="down">
-                            <a href="{{route('pagamento')}}"> <i class="fas fa-circle"></i> Meios de Pagamento</a>
-                        </li>
-                        <li class="down">
-                            <a href="{{route('arrecadacao')}}"> <i class="fas fa-circle"></i> Arrecadação</a>
-                        </li>
-                        <li>
-                            <a href="{{route('omissao')}}"> <i class="fas fa-circle"></i> Omissão</a>
-                        </li>
-                    </ul>
-                </li>
-                <li class="background">
-                    <a href="#documentosSubmenu" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle">
-                        <span>Documentos Fiscais</span>
-                    </a>
-                    <ul class="collapse list-unstyled" id="documentosSubmenu">
-                        <li class="down">
-                            <a href="{{route('manifestacao')}}"> <i class="fas fa-circle"></i> Manifestação do Destinatário</a>
-                        </li>
-                        <li class="down">
-                            <a href="{{route('arquivo-nfe')}}"> <i class="fas fa-circle"></i> Pedido de arquivo XML da NF-e</a>
-                        </li>
-                        <li class="down">
-                            <a href="{{route('arquivo-cfe')}}"> <i class="fas fa-circle"></i> Pedido de arquivo XML do CF-e</a>
-                        </li>
-                        <li class="down">
-                            <a href="{{route('arquivo-cte')}}"> <i class="fas fa-circle"></i> Pedido de arquivo XML do CT-e</a>
-                        </li>
-                        <li>
-                            <a href="{{route('arquivo-nfce')}}"> <i class="fas fa-circle"></i> Pedido de arquivo XML da NFC-e</a>
-                        </li>
-                    </ul>
-                </li>
-                <li class="background">
-                    <a href="#facilitadoresSubmenu" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle"><span>Facilitadores</span></a>
-                    <ul class="collapse list-unstyled" id="facilitadoresSubmenu">
-                        <li class="down">
-                            <a href="{{route('perguntas')}}"> <i class="fas fa-circle"></i> Perguntas Frequentes</a>
-                        </li>
-                        <li class="down">
-                            <a href="{{route('atendimento')}}"> <i class="fas fa-circle"></i> Atendimento via Chat</a>
-                        </li>
-                        <li>
-                            <a href="{{route('auditoria')}}"> <i class="fas fa-circle"></i> Auditoria</a>
-                        </li>
-                    </ul>
-                </li>
-            </ul>
         </nav>
 
-
-        <div id="navbar">
-            <nav class="navbar navbar-expand-lg navbar-light">
-                <button type="button" id="sidebarCollapse" class="btn">
-                    <i class="fas fa-bars"></i>
-                </button>
-            </nav>
-        </div>
-
-        <div id="content">
+        <main class="py-4">
             @yield('content')
-        </div>
+        </main>
     </div>
 </body>
 
-
-
-<!-- Popper.JS -->
-<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.0/umd/popper.min.js" integrity="sha384-cs/chFZiN24E4KMATLdqdvsezGxaGsi4hLGOzlXwp5UZB1LY//20VyM2taTB4QvJ" crossorigin="anonymous"></script>
+<!-- jQuery CDN - Slim version (=without AJAX) -->
+<script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
 
 <!-- Bootstrap JS -->
 <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/js/bootstrap.min.js" integrity="sha384-uefMccjFJAIv6A+rW+L4AHf99KvxDjWSu1z9VI8SKNVmz4sk7buKt/6v9KI65qnm" crossorigin="anonymous"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/malihu-custom-scrollbar-plugin/3.1.5/jquery.mCustomScrollbar.concat.min.js"></script>
-
-<script src="{{asset('js/app.js')}}"></script>
 
 </html>
